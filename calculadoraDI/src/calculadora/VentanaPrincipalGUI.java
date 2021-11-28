@@ -33,29 +33,29 @@ public class VentanaPrincipalGUI extends JFrame {
 	
 	private JLabel etiqueta, etiqueta2, etiqueta3,etiqueta4, etiqueta5;
 	
-	// Creamos un patrón para el formato decimal de los números, de manera que salgan 4 decimales. El resto de cifras decimales se redondearán hacia arriba
+	// Creamos un patrÃ³n para el formato decimal de los nÃºmeros, de manera que salgan 4 decimales. El resto de cifras decimales se redondearÃ¡n hacia arriba
 	DecimalFormat formato = new DecimalFormat("#.####");
 	
 	public VentanaPrincipalGUI ventana;
 	
 	public VentanaPrincipalGUI() {
-		//salir de la aplicación
+		//salir de la aplicaciÃ³n
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//damos el tamaño a la ventana
+		//damos el tamaÃ±o a la ventana
 		setSize(500, 500);
 		//coloca la pantalla en el centro
 		setLocationRelativeTo(null);
 		//desactivamos el organizador
 		setLayout(null);
-		//método para inicializar los componentes 
+		//mÃ©todo para inicializar los componentes 
 		inicializarComponentes();
 		//el usuario no la puede redimensionar
 		setResizable(false);
-		//escribimos el texto que va a aparecer en nuestra calculadora de título
+		//escribimos el texto que va a aparecer en nuestra calculadora de tÃ­tulo
 		setTitle("                CALCULADORA DI.");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("calcu.png"));
 		
-		//esta instrucción tiene que ir la última para evitar que de problemas
+		//esta instrucciÃ³n tiene que ir la Ãºltima para evitar que de problemas
 		setVisible(true);
 		
 	}
@@ -66,20 +66,20 @@ public class VentanaPrincipalGUI extends JFrame {
 		//le damos un color de fondo
 		getContentPane().setBackground(new Color(0,3,2 ));
 		
-		//Lo que hay que hacer es crearlas, ubicarlas y añadirlas a la ventana
+		//Lo que hay que hacer es crearlas, ubicarlas y aÃ±adirlas a la ventana
 		
 		//creamos la etiqueta 
-		etiqueta = new JLabel("Número 1 :");
+		etiqueta = new JLabel("NÃºmero 1 :");
 		
 		etiqueta.setBounds(250,100,100,40);
 		etiqueta.setFont(new Font ("Dialog", Font.BOLD, 16));
 		etiqueta.setForeground(new Color(196, 231, 229 ));
 		
 		
-		//importante añadirla porque sino no aparecerá
+		//importante aÃ±adirla porque sino no aparecerÃ¡
 		add(etiqueta);
 		
-		// El componente cajaTexto se corresponde con el primer número de entrada
+		// El componente cajaTexto se corresponde con el primer nÃºmero de entrada
 		
 		//creamos la caja de texto
 		cajaTexto = new JTextField();
@@ -92,7 +92,7 @@ public class VentanaPrincipalGUI extends JFrame {
 		cajaTexto.setForeground(new Color(2,2,2 ));
 		add(cajaTexto);
 		
-		etiqueta2 = new JLabel("Número 2:");
+		etiqueta2 = new JLabel("NÃºmero 2:");
 		etiqueta2.setFont(new Font ("Dialog", Font.BOLD, 16));
 		etiqueta2.setBounds(250,200,100,40);
 		etiqueta2.setForeground(new Color(196, 231, 229 ));
@@ -100,7 +100,7 @@ public class VentanaPrincipalGUI extends JFrame {
 				
 		add(etiqueta2);
 				
-		// El componente cajaTexto se corresponde con el segundo número de entrada
+		// El componente cajaTexto se corresponde con el segundo nÃºmero de entrada
 		
 		cajaTexto2 = new JTextField();
 		cajaTexto2.setBounds(350,200,100,40);
@@ -113,7 +113,7 @@ public class VentanaPrincipalGUI extends JFrame {
 		
 		
 		etiqueta3 = new JLabel("Resultado : ");
-		etiqueta3.setBounds(30,400,140,70);
+		etiqueta3.setBounds(30,400,200,60);
 		etiqueta3.setFont(new Font ("Dialog", Font.BOLD,18 ));
 		etiqueta3.setForeground(new Color(196, 231, 229));	
 		add(etiqueta3);
@@ -125,7 +125,7 @@ public class VentanaPrincipalGUI extends JFrame {
 		
 	
 		boton1 = new JButton("1");
-		//método al que se le pasan las coordenadas y el ancho y el alto
+		//mÃ©todo al que se le pasan las coordenadas y el ancho y el alto
 		boton1.setBounds(20, 50, 106, 95);
 		boton1.setText("Sumar");
 		
@@ -232,11 +232,11 @@ public class VentanaPrincipalGUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setTitle(boton6.getText());
-				// Cuando se hace click en el botón de raíz cuadrada, se crea un objeto de tipo
-				// ventanaLogin, por lo que esta se creará. Se le pasan los valores de la caja de texto del número1
+				// Cuando se hace click en el botÃ³n de raÃ­z cuadrada, se crea un objeto de tipo
+				// ventanaLogin, por lo que esta se crearÃ¡. Se le pasan los valores de la caja de texto del nÃºmero1
 				// y de la etiqueta del resultado, para que puedan intercambiarse los valores entre las dos ventanas
-				// La operación de raíz cúbica se realizará en la otra ventana con los valores que le llegen a trvés de estos parámetros
-				// Y la ventana principal recibirá el resultado desde la ventana de login, una vez haya hecho la operación
+				// La operaciÃ³n de raÃ­z cÃºbica se realizarÃ¡ en la otra ventana con los valores que le llegen a trvÃ©s de estos parÃ¡metros
+				// Y la ventana principal recibirÃ¡ el resultado desde la ventana de login, una vez haya hecho la operaciÃ³n
 				VentanaLogin ventanaLogin = new VentanaLogin(cajaTexto, etiqueta3);
 			}		
 		});
